@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEURALIS — Cybernetic Augmentations & Neural Upgrades</title>
+  <meta name="description" content="Evolve beyond humanity. Upgrade your biological chassis with NEURALIS military-grade cybernetic implants, advanced neural links, and nanite-based diagnostics.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Cyber Grid & Matrix overlay -->
+  <div class="cyber-grid"></div>
+  <div class="glow-orbs">
+    <div class="orb orb-primary"></div>
+    <div class="orb orb-secondary"></div>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <a href="#" class="logo" id="nav-logo">
+        <span class="logo-accent">//</span>NEURALIS
+      </a>
+      
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#augmentations" class="nav-link">Augments</a>
+        <a href="#customizer" class="nav-link">Customizer</a>
+        <a href="#diagnostics" class="nav-link">Diagnostics</a>
+        <a href="#acquisitions" class="nav-link">Acquisitions</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-nav btn-glitch" id="btn-sync-link">
+          <span class="btn-text"><i class="fa-solid fa-link-slash"></i> Sync Neural Link</span>
+          <span class="btn-glitch-overlay"></span>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="badge-hud" id="hero-badge">
+          <span class="blink-dot"></span> SECURE CONNECTED STATUS: OFFLINE
+        </div>
+        <h1 class="hero-title" id="hero-main-title">
+          EVOLVE BEYOND <br>
+          <span class="text-glow-primary">BIOLOGICAL</span> <br>
+          LIMITATIONS
+        </h1>
+        <p class="hero-description" id="hero-subtext">
+          Re-engineer your consciousness and biology. NEURALIS constructs next-generation cybernetic chassis, ultra-low latency cortical processors, and molecular nanite grids to transcend human constraints.
+        </p>
+        <div class="hero-actions">
+          <a href="#customizer" class="btn btn-primary btn-large btn-glitch" id="btn-hero-customize">
+            <span class="btn-text">Initialize Customizer <i class="fa-solid fa-gears"></i></span>
+            <span class="btn-glitch-overlay"></span>
+          </a>
+          <a href="#augmentations" class="btn btn-secondary btn-large" id="btn-hero-explore">
+            Explore Augments
+          </a>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <span class="stat-val">0.08ms</span>
+            <span class="stat-lbl">Synaptic Latency</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="stat-val">4.8 TFLOPS</span>
+            <span class="stat-lbl">Neural Bandwidth</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="stat-val">99.98%</span>
+            <span class="stat-lbl">Chassis Integration</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Cyborg Hero Graphic with HUD frame -->
+      <div class="hero-graphic-container">
+        <div class="hud-frame">
+          <div class="hud-corner top-left"></div>
+          <div class="hud-corner top-right"></div>
+          <div class="hud-corner bottom-left"></div>
+          <div class="hud-corner bottom-right"></div>
+          
+          <div class="hud-scan-line"></div>
+          
+          <!-- Spinning radar overlay -->
+          <div class="hud-radar"></div>
+          
+          <!-- Data stats readout -->
+          <div class="hud-readout top-readout">
+            <span>SYS_VER: 84.1-ALPHA</span>
+            <span>CELLS_ACTIVE: 99.8%</span>
+          </div>
+          <div class="hud-readout bottom-readout">
+            <span>LATITUDE: 37.7749° N</span>
+            <span>NEURAL_FLOW: STABLE</span>
+          </div>
+
+          <div class="image-wrapper">
+            <img src="assets/cyborg_hero.png" alt="NEURALIS Cyborg Core Chassis" class="hero-image" id="hero-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Augmentations Selector Section -->
+  <section class="augmentations" id="augmentations">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// SCHEMATICS DB</span>
+        <h2 class="section-title">CHASSIS AUGMENTATIONS</h2>
+        <p class="section-subtitle">Select an augmentation module below to inspect specs, thermal performance, and cortical integration metrics.</p>
+      </div>
+
+      <div class="augmentations-grid">
+        <!-- List of Modules (Left) -->
+        <div class="augment-list" id="augment-list">
+          <div class="augment-item active" data-module="neural" id="item-module-neural">
+            <div class="augment-icon"><i class="fa-solid fa-brain"></i></div>
+            <div class="augment-info">
+              <h3>Cortex-IX Processor</h3>
+              <p>Synaptic routing & overlay accelerator</p>
+            </div>
+            <div class="augment-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </div>
+          
+          <div class="augment-item" data-module="ocular" id="item-module-ocular">
+            <div class="augment-icon"><i class="fa-solid fa-eye"></i></div>
+            <div class="augment-info">
+              <h3>Apex Ocular HUD</h3>
+              <p>Multi-spectral overlay & targeting link</p>
+            </div>
+            <div class="augment-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </div>
+          
+          <div class="augment-item" data-module="nano" id="item-module-nano">
+            <div class="augment-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="augment-info">
+              <h3>V3 Nanite Sub-Mesh</h3>
+              <p>Self-repair cellular system</p>
+            </div>
+            <div class="augment-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </div>
+          
+          <div class="augment-item" data-module="motor" id="item-module-motor">
+            <div class="augment-icon"><i class="fa-solid fa-bolt"></i></div>
+            <div class="augment-info">
+              <h3>Hyperion Actuator Arm</h3>
+              <p>Pneumatic mechanical actuator limb</p>
+            </div>
+            <div class="augment-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </div>
+        </div>
+
+        <!-- Detail Panel (Right) -->
+        <div class="augment-detail-panel" id="augment-detail-panel">
+          <div class="hud-corner top-left"></div>
+          <div class="hud-corner top-right"></div>
+          <div class="hud-corner bottom-left"></div>
+          <div class="hud-corner bottom-right"></div>
+
+          <div class="detail-header">
+            <h3 class="detail-title" id="detail-title">Cortex-IX Processor</h3>
+            <span class="detail-status status-stable" id="detail-status">GRADE A // ACTIVE</span>
+          </div>
+
+          <p class="detail-description" id="detail-desc">
+            Direct cybernetic integration replacing the prefrontal cortex with bio-quantum threads. Accelerates sensory-thought translation speeds and grants internal terminal visualization capability with instant remote data link.
+          </p>
+
+          <div class="detail-specs">
+            <div class="spec-metric">
+              <span class="metric-label">Latency Offset</span>
+              <span class="metric-value" id="spec-latency">0.03ms</span>
+            </div>
+            <div class="spec-metric">
+              <span class="metric-label">Power Consumption</span>
+              <span class="metric-value" id="spec-power">42W / hr</span>
+            </div>
+            <div class="spec-metric">
+              <span class="metric-label">Synaptic Sync Ratio</span>
+              <span class="metric-value" id="spec-sync">99.98%</span>
+            </div>
+          </div>
+
+          <!-- Specs Progress Bars -->
+          <div class="detail-stats-bars">
+            <div class="stat-bar-container">
+              <div class="stat-bar-labels">
+                <span>Cognitive Bandwidth</span>
+                <span id="val-cognitive">95%</span>
+              </div>
+              <div class="stat-bar-outer">
+                <div class="stat-bar-inner" id="bar-cognitive" style="width: 95%"></div>
+              </div>
+            </div>
+            
+            <div class="stat-bar-container">
+              <div class="stat-bar-labels">
+                <span>Thermal Heat Index</span>
+                <span id="val-thermal">38%</span>
+              </div>
+              <div class="stat-bar-outer">
+                <div class="stat-bar-inner bar-orange" id="bar-thermal" style="width: 38%"></div>
+              </div>
+            </div>
+
+            <div class="stat-bar-container">
+              <div class="stat-bar-labels">
+                <span>Chassis Integration Risk</span>
+                <span id="val-risk">0.12%</span>
+              </div>
+              <div class="stat-bar-outer">
+                <div class="stat-bar-inner bar-cyan" id="bar-risk" style="width: 12%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Futuristic wireframe SVG layout -->
+          <div class="detail-diagram">
+            <div class="diagram-overlay-grid"></div>
+            <svg class="diagram-svg" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 20 60 L 80 60 L 100 20 L 130 100 L 150 60 L 220 60 L 240 90 L 270 30 L 290 60 L 380 60" fill="none" stroke="var(--primary)" stroke-width="2" class="heartbeat-line" />
+              <line x1="20" y1="60" x2="380" y2="60" stroke="rgba(0, 240, 255, 0.15)" stroke-dasharray="4, 4" />
+              <circle cx="100" cy="20" r="4" fill="var(--secondary)" />
+              <circle cx="130" cy="100" r="4" fill="var(--secondary)" />
+              <circle cx="240" cy="90" r="4" fill="var(--primary)" />
+              <circle cx="270" cy="30" r="4" fill="var(--primary)" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cyborg Customizer Grid Section -->
+  <section class="customizer" id="customizer">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// LAB SUITE</span>
+        <h2 class="section-title">CHASSIS CUSTOMIZER</h2>
+        <p class="section-subtitle">Toggle upgrades to re-configure the cybernetic avatar and review output specs in real-time.</p>
+      </div>
+
+      <div class="customizer-grid">
+        <!-- Configuration Controls -->
+        <div class="customizer-controls">
+          <div class="hud-panel">
+            <h3 class="panel-heading"><i class="fa-solid fa-sliders"></i> Hardware Modules</h3>
+            
+            <div class="control-group">
+              <label class="cyber-checkbox-label">
+                <input type="checkbox" checked id="toggle-ocular" class="customizer-toggle" data-stat-reflex="15" data-stat-defense="5" data-stat-intel="25" data-stat-battery="-10">
+                <span class="cyber-checkbox-box"></span>
+                <span class="checkbox-title">Apex Ocular HUD [+15% Reflex, +25% Intel]</span>
+              </label>
+              <p class="checkbox-desc">Installs targeting optic and real-time environment HUD.</p>
+            </div>
+            
+            <div class="control-group">
+              <label class="cyber-checkbox-label">
+                <input type="checkbox" id="toggle-armor" class="customizer-toggle" data-stat-reflex="-5" data-stat-defense="40" data-stat-intel="0" data-stat-battery="-15">
+                <span class="cyber-checkbox-box"></span>
+                <span class="checkbox-title">Sub-Dermal Plating [+40% Defense, -5% Reflex]</span>
+              </label>
+              <p class="checkbox-desc">Reinforced alloy grid providing heavy kinetic shielding.</p>
+            </div>
+            
+            <div class="control-group">
+              <label class="cyber-checkbox-label">
+                <input type="checkbox" checked id="toggle-processor" class="customizer-toggle" data-stat-reflex="20" data-stat-defense="0" data-stat-intel="45" data-stat-battery="-20">
+                <span class="cyber-checkbox-box"></span>
+                <span class="checkbox-title">Cortex-IX Overdrive [+20% Reflex, +45% Intel]</span>
+              </label>
+              <p class="checkbox-desc">Overclocks central neural nodes for instant logic computation.</p>
+            </div>
+
+            <div class="control-group">
+              <label class="cyber-checkbox-label">
+                <input type="checkbox" id="toggle-actuator" class="customizer-toggle" data-stat-reflex="35" data-stat-defense="15" data-stat-intel="-5" data-stat-battery="-25">
+                <span class="cyber-checkbox-box"></span>
+                <span class="checkbox-title">Hyperion Actuators [+35% Reflex, +15% Defense]</span>
+              </label>
+              <p class="checkbox-desc">Hydraulic muscle boosters replacing biological limbs.</p>
+            </div>
+            
+            <div class="control-group">
+              <label class="cyber-checkbox-label">
+                <input type="checkbox" checked id="toggle-battery" class="customizer-toggle" data-stat-reflex="0" data-stat-defense="5" data-stat-intel="5" data-stat-battery="60">
+                <span class="cyber-checkbox-box"></span>
+                <span class="checkbox-title">Auxiliary Fusion Core [+60% Battery capacity]</span>
+              </label>
+              <p class="checkbox-desc">Auxiliary battery system to feed high-drain upgrades.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real-time Specs Dashboard -->
+        <div class="customizer-display">
+          <div class="hud-panel display-panel">
+            <h3 class="panel-heading"><i class="fa-solid fa-gauge-high"></i> OUTPUT SPECS</h3>
+            
+            <div class="blueprint-visual">
+              <div class="blueprint-avatar">
+                <!-- Glowing skeleton overlay -->
+                <i class="fa-solid fa-robot avatar-icon"></i>
+                <div class="glow-pulse-circle"></div>
+                <div class="scan-laser-vertical"></div>
+              </div>
+              <div class="blueprint-tags">
+                <span class="badge-tag">CHASSIS: N-01</span>
+                <span class="badge-tag" id="chassis-power-index">POWER INDEX: 145</span>
+              </div>
+            </div>
+
+            <!-- Stats Output -->
+            <div class="specs-output-bars">
+              <div class="output-stat">
+                <div class="output-stat-header">
+                  <span>REFLEX SPEEDS</span>
+                  <span class="stat-value-text" id="val-reflex">135%</span>
+                </div>
+                <div class="output-bar-outer">
+                  <div class="output-bar-inner" id="bar-reflex" style="width: 65%"></div>
+                </div>
+              </div>
+
+              <div class="output-stat">
+                <div class="output-stat-header">
+                  <span>ARMOR DEFENSE</span>
+                  <span class="stat-value-text" id="val-defense">110%</span>
+                </div>
+                <div class="output-bar-outer">
+                  <div class="output-bar-inner bar-orange" id="bar-defense" style="width: 20%"></div>
+                </div>
+              </div>
+
+              <div class="output-stat">
+                <div class="output-stat-header">
+                  <span>COGNITIVE INTELLIGENCE</span>
+                  <span class="stat-value-text" id="val-intel">170%</span>
+                </div>
+                <div class="output-bar-outer">
+                  <div class="output-bar-inner bar-purple" id="bar-intel" style="width: 80%"></div>
+                </div>
+              </div>
+
+              <div class="output-stat">
+                <div class="output-stat-header">
+                  <span>BATTERY CAPACITY</span>
+                  <span class="stat-value-text" id="val-battery">130%</span>
+                </div>
+                <div class="output-bar-outer">
+                  <div class="output-bar-inner bar-cyan" id="bar-battery" style="width: 70%"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="specs-safety-alert status-stable" id="customizer-safety-warning">
+              <i class="fa-solid fa-circle-check"></i> SYSTEM INTEGRATION STATUS: SECURE & STABLE
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Diagnostics Console Section -->
+  <section class="diagnostics" id="diagnostics">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// NEURAL SCANNER</span>
+        <h2 class="section-title">CORTICAL DIAGNOSTIC CONSOLE</h2>
+        <p class="section-subtitle">Connect to the simulator neural network to measure biological latency, telemetry sync, and nanite flow ratios.</p>
+      </div>
+
+      <div class="diagnostics-console">
+        <!-- Interactive controls panel (Left) -->
+        <div class="console-actions">
+          <div class="hud-panel">
+            <h3 class="panel-heading"><i class="fa-solid fa-satellite-dish"></i> SYNC CONTROLLER</h3>
+            <p class="console-action-desc">Initiate a secure local scan to benchmark your core implants, test cognitive bandwidth, and establish synaptic parity.</p>
+            
+            <button class="btn btn-primary btn-full btn-glitch" id="btn-start-scan">
+              <span class="btn-text"><i class="fa-solid fa-dna"></i> RUN NEURAL SCAN</span>
+              <span class="btn-glitch-overlay"></span>
+            </button>
+            <button class="btn btn-secondary btn-full" id="btn-clear-console" disabled>
+              Clear Buffer
+            </button>
+
+            <!-- Circular scanning SVG progress tracker -->
+            <div class="gauge-wrapper">
+              <svg class="progress-gauge" viewBox="0 0 120 120">
+                <circle class="gauge-bg" cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8" />
+                <circle class="gauge-bar" id="gauge-bar-fill" cx="60" cy="60" r="50" fill="none" stroke="var(--primary)" stroke-width="8" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)" />
+              </svg>
+              <div class="gauge-text">
+                <span id="gauge-percent">0%</span>
+                <span class="gauge-label">SCAN PATH</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Monitor terminal output (Right) -->
+        <div class="console-terminal">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="terminal-title">NEURALIS BIOS v48.1 - BUFFER FEED</div>
+            <div class="terminal-status"><span class="pulse-indicator"></span> STANDBY</div>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+            <div class="term-line cmd-line">> NEURALIS Diagnostic Terminal ready. Click 'RUN NEURAL SCAN' above to begin mapping cortex cells.</div>
+            <div class="term-line comment-line">// Waiting for synaptic signal sequence validation...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Acquisitions / Tiers Section -->
+  <section class="acquisitions" id="acquisitions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// PROTOCOL LICENSING</span>
+        <h2 class="section-title">CHASSIS ACQUISITIONS</h2>
+        <p class="section-subtitle">Choose the integration pathway that aligns with your evolutionary objectives.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Tier 1 -->
+        <div class="pricing-card" id="tier-initiate">
+          <div class="tier-badge">CORE IMPLANT</div>
+          <h3 class="tier-title">INITIATE</h3>
+          <div class="tier-price">$4,500 <span class="price-cycle">/ node</span></div>
+          <p class="tier-desc">Basic sensory overlay and cognitive synchronization module. Ideal for civilians transitioning to digital interface overlays.</p>
+          <ul class="tier-features">
+            <li><i class="fa-solid fa-check text-glow-primary"></i> Cortex-I Neural Link (1.2 TFLOPS)</li>
+            <li><i class="fa-solid fa-check text-glow-primary"></i> Ocular Overlay Light HUD</li>
+            <li><i class="fa-solid fa-check text-glow-primary"></i> 10-Year Battery Warranty</li>
+            <li><i class="fa-solid fa-check text-glow-primary"></i> basic cellular self-repair nanites</li>
+            <li class="disabled"><i class="fa-solid fa-xmark"></i> Sub-dermal plating mesh (Grade B)</li>
+            <li class="disabled"><i class="fa-solid fa-xmark"></i> Kinetic muscle actuation pack</li>
+          </ul>
+          <button class="btn btn-secondary btn-full" onclick="alert('System initializing payment module link...')">Secure Chassis</button>
+        </div>
+
+        <!-- Tier 2 (Highlighted) -->
+        <div class="pricing-card card-featured" id="tier-augmented">
+          <div class="corner-glow-ribbon">POPULAR</div>
+          <div class="tier-badge badge-primary">MILITARY SPEC</div>
+          <h3 class="tier-title text-glow-primary">AUGMENTED</h3>
+          <div class="tier-price">$12,900 <span class="price-cycle">/ node</span></div>
+          <p class="tier-desc">Advanced combat-mesh modifications and bio-quantum processors. Grants superior cognitive and physical capabilities.</p>
+          <ul class="tier-features">
+            <li><i class="fa-solid fa-check text-glow-primary"></i> Cortex-IX Core Processor (4.8 TFLOPS)</li>
+            <li><i class="fa-solid fa-check text-glow-primary"></i> Apex Ocular HUD (Multi-Spectrum)</li>
+            <li><i class="fa-solid fa-check text-glow-primary"></i> V3 Nanite Sub-Mesh (Active repair)</li>
+            <li><i class="fa-solid fa-check text-glow-primary"></i> Carbon-Plating sub-dermal mesh</li>
+            <li><i class="fa-solid fa-check text-glow-primary"></i> 0.08ms standard cortex latency</li>
+            <li class="disabled"><i class="fa-solid fa-xmark"></i> Hyperion Actuator Arm bundle</li>
+          </ul>
+          <button class="btn btn-primary btn-full btn-glitch" onclick="alert('System initializing payment module link...')">
+            <span class="btn-text">Secure Chassis</span>
+            <span class="btn-glitch-overlay"></span>
+          </button>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="pricing-card" id="tier-apex">
+          <div class="tier-badge">CYBORG SUPREME</div>
+          <h3 class="tier-title text-glow-secondary">APEX PRESTIGE</h3>
+          <div class="tier-price">$45,000 <span class="price-cycle">/ node</span></div>
+          <p class="tier-desc">Total anatomical re-engineering. Includes absolute neural interface replacement, heavy dermal armor, and heavy limb actuating drives.</p>
+          <ul class="tier-features">
+            <li><i class="fa-solid fa-check text-glow-primary"></i> dual Cortex-X Extreme Core Link</li>
+            <li><i class="fa-solid fa-check text-glow-primary"></i> Apex Ocular HUD & Satellite Link</li>
+            <li><i class="fa-solid fa-check text-glow-primary"></i> V5 Bio-Nanite Core (Ultra regen)</li>
+            <li><i class="fa-solid fa-check text-glow-primary"></i> Heavy Titanium Sub-Dermal alloy</li>
+            <li><i class="fa-solid fa-check text-glow-primary"></i> Hyperion hydraulic motor limbs</li>
+            <li><i class="fa-solid fa-check text-glow-primary"></i> Over-the-air firmware diagnostics</li>
+          </ul>
+          <button class="btn btn-secondary btn-full" onclick="alert('System initializing payment module link...')">Secure Chassis</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// FAQ</span>
+        <h2 class="section-title">INTEGRATION QUERY LOGS</h2>
+        <p class="section-subtitle">Find answers to security protocols, warranty guidelines, and mechanical compatibility requirements.</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item" id="faq-q1">
+          <button class="faq-question">
+            <span>Is the Cortex-IX Processor installation permanent?</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Our neural connections use bio-synthetic synapses that fuse with your brain tissue over 72 hours. While reversible through micro-neurosurgical procedures at authorized NEURALIS clinics, it is designed for permanent installation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-q2">
+          <button class="faq-question">
+            <span>How does the nanite self-repair sub-mesh operate?</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>The system deploys millions of molecular nanites into your bloodstream. They detect structural fractures in physical implants or tissue cellular damage, drawing power from your kinetic movement to solder and reconstruct components.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-q3">
+          <button class="faq-question">
+            <span>Are cyborg implants vulnerable to electromagnetic pulse (EMP) attacks?</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>No. Every NEURALIS chassis and component is insulated with a heavy layer of graphene shielding. This functions as a cage that redirects electromagnetic surges safely around active circuitry.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-q4">
+          <button class="faq-question">
+            <span>Can I receive over-the-air (OTA) updates while sleeping?</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. By syncing your neural link with the NEURALIS grid, you can toggle automatic background upgrades during sleep cycles. This updates your sensory processors and nanite protocols silently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer" id="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#" class="logo footer-logo">
+          <span class="logo-accent">//</span>NEURALIS
+        </a>
+        <p class="brand-tagline">Re-programming the future of human biology, one synapse at a time.</p>
+        <div class="social-links">
+          <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+          <a href="#" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links-group">
+        <h4 class="footer-heading">Chassis Tech</h4>
+        <a href="#augmentations" class="footer-link">Augmentation Catalog</a>
+        <a href="#customizer" class="footer-link">Lab Suite Creator</a>
+        <a href="#diagnostics" class="footer-link">Bios Diagnostic Feed</a>
+        <a href="#acquisitions" class="footer-link">Pricing Tiers</a>
+      </div>
+
+      <div class="footer-links-group">
+        <h4 class="footer-heading">System Support</h4>
+        <a href="#faq" class="footer-link">Telemetry FAQ</a>
+        <a href="#" class="footer-link">Developer API Docs</a>
+        <a href="#" class="footer-link">Implant Safety Manual</a>
+        <a href="#" class="footer-link">Node Status Dashboard</a>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4 class="footer-heading">SYNC GRID UPDATES</h4>
+        <p class="newsletter-desc">Subscribe to receive firmware logs, new augmentation alerts, and lab integration updates.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to grid logs.'); this.reset();">
+          <input type="email" placeholder="neural-id@mesh.net" class="newsletter-input" required aria-label="Email Address">
+          <button type="submit" class="btn btn-primary newsletter-btn">Sync</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright">&copy; 2026 NEURALIS Inc. All systems operational. Graphene-Class secure shielding active.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Implants Licensing Agreement</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
